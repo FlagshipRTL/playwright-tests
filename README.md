@@ -13,9 +13,9 @@ Validates "Lost sales if you don't order" (Supply Monitoring) matches "Potential
 - Industry of All Nations: 161/161 ✓
 - Twillory: 216/216 ✓
 
-**Quick start:** [`RUN_TESTS.md`](RUN_TESTS.md)
-**Technical reference:** [`LOST_SALES_TEST_GUIDE.md`](LOST_SALES_TEST_GUIDE.md)
-**Add new brands:** [`CSV_GENERATION.md`](CSV_GENERATION.md)
+**Quick start:** [docs/run-tests.md](docs/run-tests.md)
+**Technical reference:** [docs/lost-sales-test-guide.md](docs/lost-sales-test-guide.md)
+**Add new brands:** [docs/csv-generation.md](docs/csv-generation.md)
 
 ---
 

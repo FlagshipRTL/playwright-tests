@@ -326,7 +326,7 @@ function loadStyleColors(): Array<{
 
   const csvFile = csvFiles[BRAND_KEY] || csvFiles['uat-bocop'];
 
-  const csvPath = path.resolve(__dirname, '..', csvFile);
+  const csvPath = path.resolve(__dirname, '..', 'data', csvFile);
 
   if (!fs.existsSync(csvPath)) {
     throw new Error(`CSV file not found: ${csvPath}`);

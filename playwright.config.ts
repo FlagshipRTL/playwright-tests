@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: [
     ['html', { open: 'never' }],
     ['list'],
-    ['./csv-reporter.ts']
+    ['./config/csv-reporter.ts']
   ],
 
   use: {
