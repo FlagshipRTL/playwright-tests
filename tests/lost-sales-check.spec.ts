@@ -13,9 +13,9 @@ import * as path from 'path';
  * 4. Compare: Monitoring values must match corresponding months in Planning
  */
 
-// Configuration - switch between UAT test data and real brand data
-const USE_REAL_BRAND = process.env.USE_REAL_BRAND === 'true';
-const BRAND_KEY = process.env.BRAND_KEY || (USE_REAL_BRAND ? 'public-rec' : 'uat-bocop');
+// Configuration - set BRAND_KEY to test different brands
+// Default: uat-bocop
+const BRAND_KEY = process.env.BRAND_KEY || 'uat-bocop';
 
 interface MonitoringData {
   months: string[];  // e.g., ['SEP', 'OCT', 'NOV']

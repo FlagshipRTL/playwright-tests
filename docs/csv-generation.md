@@ -222,7 +222,7 @@ grep " " brand_name_with_lost_sales.csv | head -5
 
 **4. Test sample:**
 ```bash
-USE_REAL_BRAND=true BRAND_KEY=your-brand TEST_LIMIT=5 npx playwright test
+BRAND_KEY=your-brand TEST_LIMIT=5 npx playwright test
 ```
 
 ---

@@ -46,18 +46,50 @@ Auth session saved to `playwright/.auth/user.json` (valid for ~30 days).
 
 ## Run Tests
 
+### All Brands (Recommended)
+
+**Run comprehensive validation across UAT + all production brands:**
+
+```bash
+bash run-all-brands.sh
+```
+
+**What this does:**
+- Tests UAT (15 products)
+- Tests Industry of All Nations (161 products)
+- Tests Twillory (232 products)
+- Exports results to `test_results.csv`
+
+**Time:** ~10 minutes (with 5 parallel workers)
+
+---
+
+### Single Brand
+
+**UAT (default):**
+```bash
+npx playwright test lost-sales-check.spec.ts
+```
+
+**Specific brand:**
+```bash
+BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts
+```
+
+---
+
 ### Single Test (Quick Validation)
 
 ```bash
 # Test one product to verify setup works
-npx playwright test --grep "Band Collar Madras Shirt - LS / Undyed"
+npx playwright test --grep "Base / Black"
 ```
 
 **Expected:** ✓ 1 passed (~6 seconds)
 
 ---
 
-### Run All Tests for a Brand
+### Run All Tests for a Brand (Deprecated - use run-all-brands.sh instead)
 
 **UAT Test Data (15 products):**
 ```bash
@@ -66,12 +98,12 @@ npx playwright test lost-sales-check.spec.ts
 
 **Industry of All Nations (161 products):**
 ```bash
-USE_REAL_BRAND=true BRAND_KEY=industry-of-all-nations npx playwright test lost-sales-check.spec.ts
+BRAND_KEY=industry-of-all-nations npx playwright test lost-sales-check.spec.ts
 ```
 
 **Twillory (232 products):**
 ```bash
-USE_REAL_BRAND=true BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts
+BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts
 ```
 
 ---
@@ -80,7 +112,7 @@ USE_REAL_BRAND=true BRAND_KEY=twillory-test npx playwright test lost-sales-check
 
 ```bash
 # Test first 10 products only
-USE_REAL_BRAND=true BRAND_KEY=twillory-test TEST_LIMIT=10 npx playwright test lost-sales-check.spec.ts
+BRAND_KEY=twillory-test TEST_LIMIT=10 npx playwright test lost-sales-check.spec.ts
 ```
 
 ---
@@ -150,14 +182,13 @@ npx playwright test --debug --grep "Product Name"
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `USE_REAL_BRAND` | `false` | Use real brand data instead of UAT |
-| `BRAND_KEY` | `public-rec` if USE_REAL_BRAND, else `uat-bocop` | Brand to test |
+| `BRAND_KEY` | `uat-bocop` | Brand to test |
 | `TEST_LIMIT` | All products | Limit number of products to test |
 | `NAV_TEST_COUNT` | `1` | Number of full navigation tests (vs direct URLs) |
 
 **Example:**
 ```bash
-USE_REAL_BRAND=true BRAND_KEY=twillory-test TEST_LIMIT=50 npx playwright test lost-sales-check.spec.ts
+BRAND_KEY=twillory-test TEST_LIMIT=50 npx playwright test lost-sales-check.spec.ts
 ```
 
 ---
@@ -184,7 +215,7 @@ USE_REAL_BRAND=true BRAND_KEY=twillory-test TEST_LIMIT=50 npx playwright test lo
 npx playwright test --list
 
 # Run specific brand
-USE_REAL_BRAND=true BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts
+BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts
 
 # Run with 5 parallel workers (faster)
 npx playwright test --workers=5 lost-sales-check.spec.ts

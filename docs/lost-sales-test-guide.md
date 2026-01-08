@@ -516,7 +516,7 @@ const csvFiles: { [key: string]: string } = {
 ### Step 3: Test
 
 ```bash
-USE_REAL_BRAND=true BRAND_KEY=your-brand-key TEST_LIMIT=5 npx playwright test lost-sales-check.spec.ts
+BRAND_KEY=your-brand-key TEST_LIMIT=5 npx playwright test lost-sales-check.spec.ts
 ```
 
 Validate first 5 products pass, then run all.
@@ -677,7 +677,7 @@ Shows:
 - name: Run Lost Sales Tests
   run: |
     bun run auth  # Needs Google OAuth headless mode
-    USE_REAL_BRAND=true BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts
+    BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts
 ```
 
 **Note:** Auth requires browser interaction, may need headless OAuth flow or pre-generated token.

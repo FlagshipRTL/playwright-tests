@@ -1,14 +1,14 @@
-BRAND,BRAND_KEY,STYLE,COLOR
-UAT Account,uat-bocop,Backload,Black
-UAT Account,uat-bocop,Backload,Navy
-UAT Account,uat-bocop,Backload,White
-UAT Account,uat-bocop,Base,Black
-UAT Account,uat-bocop,Base,Brown
-UAT Account,uat-bocop,Base,Dark Green
-UAT Account,uat-bocop,Base,Navy
-UAT Account,uat-bocop,Base,White
-UAT Account,uat-bocop,Frontload,Black
-UAT Account,uat-bocop,Frontload,Brown
-UAT Account,uat-bocop,Frontload,Dark Green
-UAT Account,uat-bocop,Frontload,Navy
-UAT Account,uat-bocop,Frontload,White
+BRAND_KEY,DEPARTMENT,CATEGORY,CLASS,STYLE,COLOR,CHANNEL,REGION_NAME
+uat-bocop,Mens,Tops,Shirts,Backload,Black,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Backload,Navy,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Backload,White,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Base,Black,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Base,Brown,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Base,Dark Green,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Base,Navy,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Base,White,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Frontload,Black,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Frontload,Brown,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Frontload,Dark Green,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Frontload,Navy,ecommerce,global
+uat-bocop,Mens,Tops,Shirts,Frontload,White,ecommerce,global

@@ -15,11 +15,11 @@ npx playwright test lost-sales-check.spec.ts --grep "Direct URLs" 2>&1
 
 # Run Industry of All Nations
 echo "2/3 Testing Industry of All Nations..."
-USE_REAL_BRAND=true BRAND_KEY=industry-of-all-nations npx playwright test lost-sales-check.spec.ts --grep "Direct URLs" 2>&1
+BRAND_KEY=industry-of-all-nations npx playwright test lost-sales-check.spec.ts --grep "Direct URLs" 2>&1
 
 # Run Twillory
 echo "3/3 Testing Twillory..."
-USE_REAL_BRAND=true BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts --grep "Direct URLs" 2>&1
+BRAND_KEY=twillory-test npx playwright test lost-sales-check.spec.ts --grep "Direct URLs" 2>&1
 
 echo ""
 echo "✅ All brands tested"
