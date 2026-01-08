@@ -28,7 +28,7 @@ Validates "Demand forecast" (Supply Planning) = "Gross sales" (Forecasts).
 ## Quick Start
 
 ```bash
-cd /Users/alexjofe/Docs/draper-lead/flagship-uat/playwright-tests
+cd playwright-tests
 
 # 1. Install
 bun install
