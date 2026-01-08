@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Playwright
+playwright/.auth/
+playwright-report/
+test-results/
+*.png
+*.zip
+
+# Test outputs
+test_results.csv
+diagnostic-*.png
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary
+*.tmp
+tmp/
