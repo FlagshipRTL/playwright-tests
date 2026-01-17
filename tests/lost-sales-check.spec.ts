@@ -319,7 +319,7 @@ function loadStyleColors(): Array<{
   // Map brand keys to their CSV files
   const csvFiles: { [key: string]: string } = {
     'uat-bocop': 'uat_account_style_color_list.csv',
-    'industry-of-all-nations': 'ioan_non_shirts_with_lost_sales.csv',
+    'industry-of-all-nations': 'ioan_all_with_lost_sales.csv',
     'public-rec': 'public_rec_with_lost_sales.csv',
     'twillory-test': 'twillory_with_lost_sales.csv'
   };
@@ -387,7 +387,9 @@ test.describe('Lost Sales - Planning vs. Monitoring (Direct URLs)', () => {
 
       await page.goto(monitoringUrl);
       await page.waitForLoadState('load');
-      await page.waitForTimeout(2000); // Allow React to render
+
+      // Wait for page to fully render (production is slower than staging)
+      await page.waitForTimeout(5000);
 
       // Check if lost sales section exists (skip if missing entirely)
       // Only check for presence of lost sales section - "No lead time data" can appear

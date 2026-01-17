@@ -8,6 +8,7 @@
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
     "auth": "playwright codegen staging.flagshipai.com --save-storage=playwright/.auth/user.json",
+    "auth:prod": "playwright codegen flagshipai.com --save-storage=playwright/.auth/user.json",
     "report": "playwright show-report"
   },
   "devDependencies": {
