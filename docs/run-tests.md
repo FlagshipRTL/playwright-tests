@@ -34,13 +34,21 @@ npx playwright install chromium
 
 **One-time setup** (or when session expires):
 
+**Staging (default):**
 ```bash
 bun run auth
+```
+
+**Production:**
+```bash
+bun run auth:prod
 ```
 
 Browser opens → Sign in with Google → Close browser when authenticated.
 
 Auth session saved to `playwright/.auth/user.json` (valid for ~30 days).
+
+**Note:** Staging and production require separate auth sessions. Re-run auth command when switching environments.
 
 ---
 
