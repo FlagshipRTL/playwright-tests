@@ -13,9 +13,9 @@ import * as path from 'path';
  * 4. Compare: Monitoring values must match corresponding months in Planning
  */
 
-// Configuration - set BRAND_KEY to test different brands
-// Default: uat-bocop
+// Configuration
 const BRAND_KEY = process.env.BRAND_KEY || 'uat-bocop';
+const BASE_DOMAIN = process.env.PROD === 'true' ? 'flagshipai.com' : 'staging.flagshipai.com';
 
 interface MonitoringData {
   months: string[];  // e.g., ['SEP', 'OCT', 'NOV']
@@ -380,7 +380,7 @@ test.describe('Lost Sales - Planning vs. Monitoring (Direct URLs)', () => {
 
     test(`${style} / ${color}`, async ({ page }) => {
       // Step 1: Navigate to style's Supply Monitoring page
-      const monitoringUrl = `https://staging.flagshipai.com/brand/${BRAND_KEY}/supply/monitoring?channel=${channel}&region=${region}&department=${encodeURIComponent(department)}&category=${encodeURIComponent(category)}&class=${encodeURIComponent(className)}&style=${encodeURIComponent(style)}`;
+      const monitoringUrl = `https://${BASE_DOMAIN}/brand/${BRAND_KEY}/supply/monitoring?channel=${channel}&region=${region}&department=${encodeURIComponent(department)}&category=${encodeURIComponent(category)}&class=${encodeURIComponent(className)}&style=${encodeURIComponent(style)}`;
 
       console.log(`\n=== Testing: ${style} / ${color} ===`);
       console.log(`Monitoring URL: ${monitoringUrl}`);
@@ -431,7 +431,7 @@ test.describe('Lost Sales - Planning vs. Monitoring (Direct URLs)', () => {
       expect(monitoringData.values.length, `${color}: Monitoring should have 3 values`).toBe(3);
 
       // Step 4: Navigate to color's Planning page
-      const planningUrl = `https://staging.flagshipai.com/brand/${BRAND_KEY}/supply/planning?channel=${channel}&region=${region}&department=${encodeURIComponent(department)}&category=${encodeURIComponent(category)}&class=${encodeURIComponent(className)}&style=${encodeURIComponent(style)}&color=${encodeURIComponent(color)}`;
+      const planningUrl = `https://${BASE_DOMAIN}/brand/${BRAND_KEY}/supply/planning?channel=${channel}&region=${region}&department=${encodeURIComponent(department)}&category=${encodeURIComponent(category)}&class=${encodeURIComponent(className)}&style=${encodeURIComponent(style)}&color=${encodeURIComponent(color)}`;
 
       console.log(`Planning URL: ${planningUrl}`);
       await page.goto(planningUrl);
